@@ -126,3 +126,26 @@ cv2.imshow("new2",new2)
 cv2.imshow("mixed",result)
 cv2.waitKey()
 cv2.destroyAllWindows()
+
+#bitwise logic operation逐位元邏輯運算
+"""
+cv2.bitwise_and()
+cv2.bitwise_or()
+cv2.bitwise_xor()
+cv2.bitwise_not()
+"""
+#dst=cv2.bitwise_and(scr1,scr2,[mask])
+"""
+dst表示與輸入值具有相同大小的array輸出值
+scr1表示第一個array或scalar類型的輸入值
+scr2表示第二個array或scalar類型的輸入值
+mask表示可選操作隱藏,8bit單通道array
+"""
+a=np.random.randint(0,255,(5,5),dtype=np.uint8)
+b=np.zeros((5,5),dtype=np.uint8)
+b[0:3,0:3]=255
+b[4,4]=255
+c=cv2.bitwise_and(a,b)
+print("a=\n",a)
+print("b=\n",b)
+print("c=\n",c)
